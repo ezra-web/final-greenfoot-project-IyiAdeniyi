@@ -12,12 +12,21 @@ public class Snake extends Actor
      * Act - do whatever the Snake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    String facing = "right";
     public void act()
     {
-        // Add your action code here.
-        if("right".keyIsDown())
+     
+        if(Greenfoot.isKeyDown("left"))
         {
-            move(2);
+            move(-4);
+        }
+        //when right key is pressed moves the elephant right
+
+        else if(Greenfoot.isKeyDown("right"))
+        {
+            move(4);
+            facing = "right";
         }
     }
 }
