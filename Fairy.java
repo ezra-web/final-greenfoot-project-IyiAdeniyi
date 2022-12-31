@@ -76,6 +76,5 @@ public class Fairy extends Actor
         }
         
         animateFairy();
-
     }
 }
