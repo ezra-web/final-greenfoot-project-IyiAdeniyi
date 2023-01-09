@@ -76,5 +76,10 @@ public class Fairy extends Actor
         }
         
         animateFairy();
+        
+        if(isTouching(FairyTree.class))
+        {
+            
+        }
     }
 }

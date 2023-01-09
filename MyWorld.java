@@ -27,29 +27,39 @@ public class MyWorld extends World
     private void prepare()
     {
         Fairy fairy = new Fairy();
-        addObject(fairy,95,170);
+        addObject(fairy,95,340);
 
         GameTIle gameTIle = new GameTIle();
-        addObject(gameTIle,598,388);
-        gameTIle.setLocation(765,250);
+        addObject(gameTIle,760,420);
+
         GameTIle gameTIle2 = new GameTIle();
-        addObject(gameTIle2,685,250);
+        addObject(gameTIle2,685,420);
+
         GameTIle gameTIle3 = new GameTIle();
-        addObject(gameTIle3,604,250);
+        addObject(gameTIle3,604,420);
+
         GameTIle gameTIle4 = new GameTIle();
-        addObject(gameTIle4,527,250);
+        addObject(gameTIle4,527,420);
+
         GameTIle gameTIle5 = new GameTIle();
-        addObject(gameTIle5,448,250);
+        addObject(gameTIle5,448,420);
+
         GameTIle gameTIle6 = new GameTIle();
-        addObject(gameTIle6,369,250);
+        addObject(gameTIle6,369,420);
+
         GameTIle gameTIle7 = new GameTIle();
-        addObject(gameTIle7,289,250);
+        addObject(gameTIle7,289,420);
+
         GameTIle gameTIle8 = new GameTIle();
-        addObject(gameTIle8,211,250);
+        addObject(gameTIle8,211,420);
+
         GameTIle gameTIle9 = new GameTIle();
-        addObject(gameTIle9,131,250);
+        addObject(gameTIle9,131,420);
+
         GameTIle gameTIle10 = new GameTIle();
-        addObject(gameTIle10,51,250);
-        
+        addObject(gameTIle10,51,420);
+
+        FairyTree fairyTree = new FairyTree();
+        addObject(fairyTree,689,307);
     }
 }
