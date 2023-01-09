@@ -19,6 +19,7 @@ public class MyWorld extends World
         
         prepare();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -26,6 +27,29 @@ public class MyWorld extends World
     private void prepare()
     {
         Fairy fairy = new Fairy();
-        addObject(fairy,120,190);
+        addObject(fairy,95,170);
+
+        GameTIle gameTIle = new GameTIle();
+        addObject(gameTIle,598,388);
+        gameTIle.setLocation(765,250);
+        GameTIle gameTIle2 = new GameTIle();
+        addObject(gameTIle2,685,250);
+        GameTIle gameTIle3 = new GameTIle();
+        addObject(gameTIle3,604,250);
+        GameTIle gameTIle4 = new GameTIle();
+        addObject(gameTIle4,527,250);
+        GameTIle gameTIle5 = new GameTIle();
+        addObject(gameTIle5,448,250);
+        GameTIle gameTIle6 = new GameTIle();
+        addObject(gameTIle6,369,250);
+        GameTIle gameTIle7 = new GameTIle();
+        addObject(gameTIle7,289,250);
+        GameTIle gameTIle8 = new GameTIle();
+        addObject(gameTIle8,211,250);
+        GameTIle gameTIle9 = new GameTIle();
+        addObject(gameTIle9,131,250);
+        GameTIle gameTIle10 = new GameTIle();
+        addObject(gameTIle10,51,250);
+        
     }
 }
