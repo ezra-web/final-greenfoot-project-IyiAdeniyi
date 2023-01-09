@@ -20,6 +20,17 @@ public class Levels extends World
         prepare();
     }
     
+    public void act()
+    {
+        LevelTwo levelTwo = new LevelTwo();
+        
+        if(levelTwo.leveltwo == true)
+        {
+            LevelTwoButton levelTwoButton = new LevelTwoButton();
+            addObject(levelTwoButton,401,239);
+        }
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -28,5 +39,6 @@ public class Levels extends World
     {
         LevelButton levelButton = new LevelButton();
         addObject(levelButton,148,238);
+        
     }
 }

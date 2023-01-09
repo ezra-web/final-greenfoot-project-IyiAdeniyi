@@ -77,9 +77,17 @@ public class Fairy extends Actor
         
         animateFairy();
         
+        nextLevel();
+        
+    }
+    
+    public void nextLevel()
+    {
         if(isTouching(FairyTree.class))
         {
-            
+            LevelTwo levelTwoWorld = new LevelTwo();
+            Greenfoot.setWorld(levelTwoWorld);
         }
+        
     }
 }
