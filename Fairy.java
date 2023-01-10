@@ -17,6 +17,8 @@ public class Fairy extends Actor
     
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
+    
+    private int speed;
 
     public Fairy()
     {
@@ -79,6 +81,33 @@ public class Fairy extends Actor
         
         nextLevel();
         
+        Jump();
+    }
+    
+    public void Jump()
+    {
+        int ground = getWorld().getHeight() - getImage().getHeight()/2;
+        boolean onGround = (getY() == ground);
+        
+        if(getY() != 340)
+        {
+            speed++;
+            setLocation(getX(), getY() + speed);
+            
+            if(getY() >=ground)
+            {
+                setLocation(getX(), ground);
+                Greenfoot.getKey();
+            }
+        }
+        else
+        {
+            if("up".equals(Greenfoot.getKey()))
+            {
+                speed = -15;
+                setLocation(getX(), getY() + speed);
+            }
+        }
     }
     
     public void nextLevel()

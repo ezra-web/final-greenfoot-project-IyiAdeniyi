@@ -60,6 +60,9 @@ public class MyWorld extends World
         addObject(gameTIle10,51,420);
 
         FairyTree fairyTree = new FairyTree();
-        addObject(fairyTree,689,307);
+        addObject(fairyTree,700,310);
+        
+        BackButton backButton = new BackButton();
+        addObject(backButton,39,27);
     }
 }
