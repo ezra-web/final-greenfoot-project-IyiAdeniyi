@@ -15,5 +15,12 @@ public class TutorialButton extends Actor
     public void act()
     {
         // Add your action code here.
+
+        if(Greenfoot.mousePressed(TutorialButton.this))
+        {
+            Tutorial tutorialWorld = new Tutorial();
+            Greenfoot.setWorld(tutorialWorld);
+        }
+        
     }
 }

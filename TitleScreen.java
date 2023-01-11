@@ -19,6 +19,7 @@ public class TitleScreen extends World
         super(800, 450, 1); 
         prepare();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -27,5 +28,8 @@ public class TitleScreen extends World
     {
         PlayButton playButton = new PlayButton();
         addObject(playButton,415,335);
+        TutorialButton tutorialButton = new TutorialButton();
+        addObject(tutorialButton,410,419);
+        playButton.setLocation(415,329);
     }
 }

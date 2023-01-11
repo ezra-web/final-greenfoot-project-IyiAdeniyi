@@ -17,8 +17,8 @@ public class PlayButton extends Actor
         // Add your action code here.
         if(Greenfoot.mousePressed(PlayButton.this))
         {
-            MyWorld gameWorld = new MyWorld();
-            Greenfoot.setWorld(gameWorld);
+            Levels levelsWorld = new Levels();
+            Greenfoot.setWorld(levelsWorld);
         }
     }
 }

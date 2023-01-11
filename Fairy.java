@@ -77,11 +77,12 @@ public class Fairy extends Actor
             facing = "right";
         }
         
-        Jump();
-        animateFairy();        
+        animateFairy();  
+        
         nextLevel();
         
-        //Jump();
+        Jump(); 
+
     }
     
     public void Jump()
@@ -117,5 +118,6 @@ public class Fairy extends Actor
             LevelTwo levelTwoWorld = new LevelTwo();
             Greenfoot.setWorld(levelTwoWorld);
         }
+
     }
 }
