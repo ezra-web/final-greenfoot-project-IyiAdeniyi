@@ -15,7 +15,6 @@ public class LevelButton extends Actor
     public void act()
     {
         // Add your action code here.
-
         if(Greenfoot.mousePressed(LevelButton.this))
         {
             MyWorld gameWorld = new MyWorld();

@@ -1,22 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Tutorial here.
+ * Write a description of class Levels here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tutorial extends World
+public class Levels extends World
 {
 
     /**
-     * Constructor for objects of class Tutorial.
+     * Constructor for objects of class Levels.
      * 
      */
-    public Tutorial()
+    public Levels()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-
         super(800, 450, 1); 
         prepare();
     }
@@ -27,10 +26,7 @@ public class Tutorial extends World
      */
     private void prepare()
     {
-        Fairy fairy = new Fairy();
-        addObject(fairy,611,255);
-        fairy.setLocation(525,399);
-        BackButton backButton = new BackButton();
-        addObject(backButton,42,31);
+        LevelButton levelButton = new LevelButton();
+        addObject(levelButton,148,238);
     }
 }

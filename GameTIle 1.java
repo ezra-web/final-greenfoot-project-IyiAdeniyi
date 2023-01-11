@@ -1,16 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class FairyTree here.
+ * Write a description of class GameTIle here.
  * 
-
- * @author Iyi Adeniyi 
- * @version 2023-01-09
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class FairyTree extends Actor
+public class GameTIle extends Actor
 {
     /**
-     * Act - do whatever the FairyTree wants to do. This method is called whenever
+     * Act - do whatever the GameTIle wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
