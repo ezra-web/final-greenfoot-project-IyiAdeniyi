@@ -64,5 +64,6 @@ public class MyWorld extends World
         
         BackButton backButton = new BackButton();
         addObject(backButton,39,27);
+        addObject(fairyTree,689,307);
     }
 }

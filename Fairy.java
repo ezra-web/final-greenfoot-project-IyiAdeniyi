@@ -117,6 +117,5 @@ public class Fairy extends Actor
             LevelTwo levelTwoWorld = new LevelTwo();
             Greenfoot.setWorld(levelTwoWorld);
         }
-        
     }
 }
