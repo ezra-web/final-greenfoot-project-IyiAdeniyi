@@ -13,11 +13,11 @@ public class IceFairy extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    GreenfootImage idle[] = new GreenfootImage[5];
+    GreenfootImage idle[] = new GreenfootImage[6];
 
     SimpleTimer animationTimer = new SimpleTimer();
     
-    private int speed;
+    public int speed;
     
     public IceFairy()
     {
@@ -32,9 +32,13 @@ public class IceFairy extends Actor
         setImage(idle[0]);
     }
     
+    int imageIndex = 0;
     public void animation()
     {
-        if(animationTimer.millisElapsed() < 200)
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+        
+        if(animationTimer.millisElapsed() < 500)
         {
             return;
         }
