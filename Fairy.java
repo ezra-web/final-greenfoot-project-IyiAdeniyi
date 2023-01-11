@@ -17,6 +17,8 @@ public class Fairy extends Actor
     
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
+    
+    public int speed;
 
     public Fairy()
     {
@@ -46,7 +48,7 @@ public class Fairy extends Actor
             return;
         }
         animationTimer.mark();
-        //changes the direction the elephant is facing
+        //changes the direction the fairy is facing
         if(facing.equals("right"))
         {
         setImage(idleRight[imageIndex]);
@@ -67,7 +69,7 @@ public class Fairy extends Actor
             move(-4);
             facing = "left";
         }
-        //when right key is pressed moves the elephant right
+        //when right key is pressed moves the fairy right
 
         else if(Greenfoot.isKeyDown("right"))
         {
@@ -75,7 +77,45 @@ public class Fairy extends Actor
             facing = "right";
         }
         
-        animateFairy();
-
+        Jump();
+        animateFairy();        
+        nextLevel();
+        
+        //Jump();
+    }
+    
+    public void Jump()
+    {
+        int ground = getWorld().getHeight() - getImage().getHeight()/2;
+        boolean onGround = (getY() == ground);
+        
+        if(getY() != 340)
+        {
+            speed++;
+            setLocation(getX(), getY() + speed);
+            
+            if(getY() >=ground)
+            {
+                setLocation(getX(), ground);
+                Greenfoot.getKey();
+            }
+        }
+        else
+        {
+            if("up".equals(Greenfoot.getKey()))
+            {
+                speed = -15;
+                setLocation(getX(), getY() + speed);
+            }
+        }
+    }
+    
+    public void nextLevel()
+    {
+        if(isTouching(FairyTree.class))
+        {
+            LevelTwo levelTwoWorld = new LevelTwo();
+            Greenfoot.setWorld(levelTwoWorld);
+        }
     }
 }
