@@ -16,7 +16,7 @@ public class Fairy extends Actor
     GreenfootImage idleLeft[] = new GreenfootImage[5];
     
     String facing = "right";
-    SimpleTimer animationTimer = new SimpleTimer();
+    SimpleTimer animateTimer = new SimpleTimer();
     
     public int speed;
 
@@ -35,7 +35,7 @@ public class Fairy extends Actor
             idleLeft[i].scale(100, 100);  
         }
         
-        animationTimer.mark();
+        animateTimer.mark();
         
         setImage(idleRight[0]);
     }
@@ -43,11 +43,11 @@ public class Fairy extends Actor
     int imageIndex = 0;
     public void animateFairy()
     {
-        if(animationTimer.millisElapsed() < 200)
+        if(animateTimer.millisElapsed() < 200)
         {
             return;
         }
-        animationTimer.mark();
+        animateTimer.mark();
         //changes the direction the fairy is facing
         if(facing.equals("right"))
         {
@@ -82,7 +82,6 @@ public class Fairy extends Actor
         nextLevel();
         
         Jump(); 
-
     }
     
     public void Jump()

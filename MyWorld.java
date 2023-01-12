@@ -29,41 +29,40 @@ public class MyWorld extends World
         Fairy fairy = new Fairy();
         addObject(fairy,95,340);
 
-        GameTIle gameTIle = new GameTIle();
-        addObject(gameTIle,760,420);
-
-        GameTIle gameTIle2 = new GameTIle();
-        addObject(gameTIle2,685,420);
-
-        GameTIle gameTIle3 = new GameTIle();
-        addObject(gameTIle3,604,420);
-
-        GameTIle gameTIle4 = new GameTIle();
-        addObject(gameTIle4,527,420);
-
-        GameTIle gameTIle5 = new GameTIle();
-        addObject(gameTIle5,448,420);
-
-        GameTIle gameTIle6 = new GameTIle();
-        addObject(gameTIle6,369,420);
-
-        GameTIle gameTIle7 = new GameTIle();
-        addObject(gameTIle7,289,420);
-
-        GameTIle gameTIle8 = new GameTIle();
-        addObject(gameTIle8,211,420);
-
-        GameTIle gameTIle9 = new GameTIle();
-        addObject(gameTIle9,131,420);
-
-        GameTIle gameTIle10 = new GameTIle();
-        addObject(gameTIle10,51,420);
-
-        FairyTree fairyTree = new FairyTree();
-        addObject(fairyTree,700,310);
-        
         BackButton backButton = new BackButton();
         addObject(backButton,39,27);
-        addObject(fairyTree,689,307);
+
+        GameTile gameTile = new GameTile();
+        addObject(gameTile,44,419);
+
+        GameTile gameTile2 = new GameTile();
+        addObject(gameTile2,121,419);
+
+        GameTile gameTile3 = new GameTile();
+        addObject(gameTile3,198,419);
+
+        GameTile gameTile4 = new GameTile();
+        addObject(gameTile4,276,419);
+
+        GameTile gameTile5 = new GameTile();
+        addObject(gameTile5,355,419);
+
+        GameTile gameTile6 = new GameTile();
+        addObject(gameTile6,435,419);
+
+        GameTile gameTile7 = new GameTile();
+        addObject(gameTile7,513,419);
+
+        GameTile gameTile8 = new GameTile();
+        addObject(gameTile8,592,419);
+
+        GameTile gameTile9 = new GameTile();
+        addObject(gameTile9,671,419);
+
+        GameTile gameTile10 = new GameTile();
+        addObject(gameTile10,749,419);
+        
+        IceFairy iceFairy = new IceFairy();
+        addObject(iceFairy,686,363);
     }
 }

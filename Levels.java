@@ -26,8 +26,6 @@ public class Levels extends World
         {
             LevelTwoButton levelTwoButton = new LevelTwoButton();
             addObject(levelTwoButton,401,239);
-            
-            
         }
     }
     

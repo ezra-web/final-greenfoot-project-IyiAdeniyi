@@ -17,14 +17,14 @@ public class IceFairy extends Actor
 
     SimpleTimer animationTimer = new SimpleTimer();
     
-    public int speed;
+    int speed = -5;
     
     public IceFairy()
     {
         for(int i = 0; i < idle.length; i++)
         {
             idle[i] = new GreenfootImage("images/iceFairySprites/icefairy"+ i + ".png");
-            idle[i].scale(100, 100);
+            idle[i].scale(50, 50);
         }
         
         animationTimer.mark();
@@ -35,19 +35,30 @@ public class IceFairy extends Actor
     int imageIndex = 0;
     public void animation()
     {
-        setImage(idle[imageIndex]);
-        imageIndex = (imageIndex + 1) % idle.length;
-        
-        if(animationTimer.millisElapsed() < 500)
+        if(animationTimer.millisElapsed() < 100)
         {
             return;
         }
         animationTimer.mark();
+        
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+        
     }
 
     public void act()
     {
         // Add your action code here.
         animation();
+        
+        int x = getX() + speed;
+        int y = 363;
+        setLocation(x, y);
+        
+    }
+    
+    public void setSpeed(int spd)
+    {
+        speed = spd;
     }
 }
