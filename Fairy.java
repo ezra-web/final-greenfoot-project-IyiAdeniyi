@@ -18,7 +18,7 @@ public class Fairy extends Actor
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
     
-    private int speed;
+    public int speed;
 
     public Fairy()
     {
@@ -48,7 +48,7 @@ public class Fairy extends Actor
             return;
         }
         animationTimer.mark();
-        //changes the direction the elephant is facing
+        //changes the direction the fairy is facing
         if(facing.equals("right"))
         {
         setImage(idleRight[imageIndex]);
@@ -69,7 +69,7 @@ public class Fairy extends Actor
             move(-4);
             facing = "left";
         }
-        //when right key is pressed moves the elephant right
+        //when right key is pressed moves the fairy right
 
         else if(Greenfoot.isKeyDown("right"))
         {
@@ -77,11 +77,12 @@ public class Fairy extends Actor
             facing = "right";
         }
         
-        animateFairy();
+        animateFairy();  
         
         nextLevel();
         
-        Jump();
+        Jump(); 
+
     }
     
     public void Jump()
