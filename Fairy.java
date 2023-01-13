@@ -102,7 +102,7 @@ public class Fairy extends Actor
         }
         else
         {
-            if("up".equals(Greenfoot.getKey()))
+            if("space".equals(Greenfoot.getKey()))
             {
                 speed = -15;
                 setLocation(getX(), getY() + speed);

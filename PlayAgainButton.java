@@ -1,24 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MenuButton here.
+ * Write a description of class PlayAgainButton here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MenuButton extends Actor
+public class PlayAgainButton extends Actor
 {
     /**
-     * Act - do whatever the MenuButton wants to do. This method is called whenever
+     * Act - do whatever the PlayAgainButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
         // Add your action code here.
-        if(Greenfoot.mousePressed(MenuButton.this))
+        if(Greenfoot.mousePressed(PlayAgainButton.this))
         {
-            TitleScreen titleWorld = new TitleScreen();
-            Greenfoot.setWorld(titleWorld);
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
         }
     }
 }

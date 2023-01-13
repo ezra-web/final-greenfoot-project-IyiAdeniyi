@@ -25,10 +25,10 @@ public class GameOver extends World
      */
     private void prepare()
     {
-        PlayAgain playAgain = new PlayAgain();
-        addObject(playAgain,602,386);
-        
         MenuButton menuButton = new MenuButton();
-        addObject(menuButton,213,388);
+        addObject(menuButton,211,387);
+        
+        PlayAgainButton playAgainButton = new PlayAgainButton();
+        addObject(playAgainButton,600,387);
     }
 }

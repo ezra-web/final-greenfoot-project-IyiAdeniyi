@@ -17,7 +17,7 @@ public class IceFairy extends Actor
 
     SimpleTimer animationTimer = new SimpleTimer();
     
-    int speed = -5;
+    int speed = -3;
     
     public IceFairy()
     {
@@ -55,6 +55,17 @@ public class IceFairy extends Actor
         int y = 363;
         setLocation(x, y);
         
+        if(isTouching(Fairy.class))
+        {
+            GameOver gameOverWorld = new GameOver();
+            Greenfoot.setWorld(gameOverWorld);
+            return;
+        }
+        
+        if(this.isAtEdge())
+        {
+            setLocation(x, y);
+        }
     }
     
     public void setSpeed(int spd)

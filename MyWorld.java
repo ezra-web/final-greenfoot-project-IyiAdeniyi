@@ -18,8 +18,15 @@ public class MyWorld extends World
         super(800, 450, 1);
         
         prepare();
+        
+        createIceFairy();
     }
     
+    public void createIceFairy()
+    {
+        IceFairy icefairy = new IceFairy();
+        addObject(icefairy, 730 ,372);
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -61,8 +68,5 @@ public class MyWorld extends World
 
         GameTile gameTile10 = new GameTile();
         addObject(gameTile10,749,419);
-        
-        IceFairy iceFairy = new IceFairy();
-        addObject(iceFairy,686,363);
     }
 }
