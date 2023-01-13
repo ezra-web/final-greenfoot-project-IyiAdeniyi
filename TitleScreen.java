@@ -28,9 +28,10 @@ public class TitleScreen extends World
     {
         PlayButton playButton = new PlayButton();
         addObject(playButton,415,335);
-        
+
         TutorialButton tutorialButton = new TutorialButton();
         addObject(tutorialButton,410,419);
-       
+
+        playButton.setLocation(399,321);
     }
 }
