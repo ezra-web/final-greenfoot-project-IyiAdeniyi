@@ -15,8 +15,14 @@ public class Fairy extends Actor
     GreenfootImage idleRight[] = new GreenfootImage[5];
     GreenfootImage idleLeft[] = new GreenfootImage[5];
     
+    GreenfootSound fairyTreeSound = new GreenfootSound("fairytree.mp3");
+    
     String facing = "right";
     SimpleTimer animateTimer = new SimpleTimer();
+    
+    SimpleTimer treeTimer = new SimpleTimer();
+    
+    public int timer;
     
     public int speed;
 
@@ -82,6 +88,13 @@ public class Fairy extends Actor
         nextLevel();
         
         Jump(); 
+        
+        if(isTouching(IceFairy.class))
+        {
+            GameOver gameOverWorld = new GameOver();
+            Greenfoot.setWorld(gameOverWorld);
+            return;
+        }
     }
     
     public void Jump()
@@ -89,12 +102,20 @@ public class Fairy extends Actor
         int ground = getWorld().getHeight() - getImage().getHeight()/2;
         boolean onGround = (getY() == ground);
         
-        if(getY() != 340)
+        if(getY() != 340 )
         {
+            if(speed == 0 && timer > 0)
+            {
+                timer--;
+            }
+            if(speed == 0 && timer > 0)
+            {
+                return;
+            }
             speed++;
             setLocation(getX(), getY() + speed);
             
-            if(getY() >=ground)
+            if(getY() >=ground )
             {
                 setLocation(getX(), ground);
                 Greenfoot.getKey();
@@ -104,8 +125,13 @@ public class Fairy extends Actor
         {
             if("space".equals(Greenfoot.getKey()))
             {
-                speed = -15;
+                speed = -20;
+                if(Levels.levelTwo == true)
+                {
+                    speed = -20;
+                }
                 setLocation(getX(), getY() + speed);
+                timer = 13;
             }
         }
     }
@@ -114,8 +140,21 @@ public class Fairy extends Actor
     {
         if(isTouching(FairyTree.class))
         {
-            LevelTwo levelTwoWorld = new LevelTwo();
-            Greenfoot.setWorld(levelTwoWorld);
+            fairyTreeSound.play();
+            treeTimer.mark();
+            if(treeTimer.millisElapsed() < 800)
+            {
+                if(Levels.levelTwo == true)
+                {
+                    TitleScreen home = new TitleScreen();
+                    Greenfoot.setWorld(home);
+                }
+                else
+                {
+                    LevelTwo levelTwoWorld = new LevelTwo();
+                    Greenfoot.setWorld(levelTwoWorld);  
+                }
+            }
         }
     }
 }

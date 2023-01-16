@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameTile here.
+ * Write a description of class LevelTwoLabel here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi
+ * @version 2023-01-15
  */
-public class GameTile extends Actor
+public class LevelTwoLabel extends Actor
 {
     /**
-     * Act - do whatever the GameTile wants to do. This method is called whenever
+     * Act - do whatever the LevelTwoLabel wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Levels here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi
+ * @version 2023-01-15
  */
 public class Levels extends World
 {
@@ -25,7 +25,7 @@ public class Levels extends World
         if(levelTwo == true)
         {
             LevelTwoButton levelTwoButton = new LevelTwoButton();
-            addObject(levelTwoButton,401,239);
+            addObject(levelTwoButton,567,238);
         }
     }
     
@@ -35,8 +35,9 @@ public class Levels extends World
      */
     private void prepare()
     {
+
         LevelButton levelButton = new LevelButton();
-        addObject(levelButton,148,238);
+        addObject(levelButton,236,236);
     }
     
     public static void setLevelTwo(boolean leveltwo)

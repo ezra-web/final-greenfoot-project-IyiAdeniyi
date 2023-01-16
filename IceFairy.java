@@ -17,14 +17,14 @@ public class IceFairy extends Actor
 
     SimpleTimer animationTimer = new SimpleTimer();
     
-    int speed = -3;
+    int speed = -5;
     
     public IceFairy()
     {
         for(int i = 0; i < idle.length; i++)
         {
             idle[i] = new GreenfootImage("images/iceFairySprites/icefairy"+ i + ".png");
-            idle[i].scale(50, 50);
+            idle[i].scale(40, 40);
         }
         
         animationTimer.mark();
@@ -55,16 +55,14 @@ public class IceFairy extends Actor
         int y = 363;
         setLocation(x, y);
         
-        if(isTouching(Fairy.class))
-        {
-            GameOver gameOverWorld = new GameOver();
-            Greenfoot.setWorld(gameOverWorld);
-            return;
-        }
-        
         if(this.isAtEdge())
         {
-            setLocation(x, y);
+            setLocation(710 ,372);
+        }
+        
+        if(Levels.levelTwo == true)
+        {
+            speed = -7;
         }
     }
     

@@ -18,16 +18,11 @@ public class MyWorld extends World
         super(800, 450, 1);
         
         prepare();
-        
-        createIceFairy();
+        setPaintOrder(FairyTree.class, IceFairy.class);
+
     }
     
-    public void createIceFairy()
-    {
-        IceFairy icefairy = new IceFairy();
-        addObject(icefairy, 730 ,372);
-    }
-    /**
+       /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
@@ -35,6 +30,9 @@ public class MyWorld extends World
     {
         Fairy fairy = new Fairy();
         addObject(fairy,95,340);
+
+        FairyTree fairyTree = new FairyTree();
+        addObject(fairyTree,710,307);
 
         BackButton backButton = new BackButton();
         addObject(backButton,39,27);
@@ -68,5 +66,11 @@ public class MyWorld extends World
 
         GameTile gameTile10 = new GameTile();
         addObject(gameTile10,749,419);
+
+        IceFairy icefairy = new IceFairy();
+        addObject(icefairy, 710 ,372);
+
+        LevelOneLabel levelOneLabel = new LevelOneLabel();
+        addObject(levelOneLabel,400,25);
     }
 }
