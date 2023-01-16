@@ -18,13 +18,12 @@ public class LevelTwo extends World
         super(800, 450, 1); 
         
         Levels leveltwo = new Levels();
-        leveltwo.setLevelTwo(true);
-
-        BackButton backButton = new BackButton();
-
+        leveltwo.setLevelTwo(true);        
+        
+        addObject(MyWorld.scoreLabel, 750, 45);
+        
         prepare();
         setPaintOrder(FairyTree.class, IceFairy.class);
-
     }
     
     /**
@@ -35,19 +34,19 @@ public class LevelTwo extends World
     {
         BackButton backButton = new BackButton();
         addObject(backButton,40,29);
-        
+
         Fairy fairy = new Fairy();
         addObject(fairy,95,340);
 
         FairyTree fairyTree = new FairyTree();
         addObject(fairyTree,710,307);
-        
+
         IceFairy icefairy = new IceFairy();
         addObject(icefairy, 710 ,372);
-        
+
         LevelTwoLabel levelTwoLabel = new LevelTwoLabel();
         addObject(levelTwoLabel,395,31);
-        
+
         GameTile gameTile = new GameTile();
         addObject(gameTile,44,419);
 
@@ -77,5 +76,17 @@ public class LevelTwo extends World
 
         GameTile gameTile10 = new GameTile();
         addObject(gameTile10,749,419);
+        
+        Coin coin = new Coin();
+        addObject(coin,200,367);
+        
+        Coin coin2 = new Coin();
+        addObject(coin2,294,368);
+        
+        Coin coin3 = new Coin();
+        addObject(coin3,398,370);
+        
+        Coin coin4 = new Coin();
+        addObject(coin4,550,368);
     }
 }

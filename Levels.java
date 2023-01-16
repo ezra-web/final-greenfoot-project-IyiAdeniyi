@@ -11,8 +11,7 @@ public class Levels extends World
     public static boolean levelTwo = false;
     /**
      * Constructor for objects of class Levels.
-     * 
-     */
+    */
     public Levels()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -35,7 +34,6 @@ public class Levels extends World
      */
     private void prepare()
     {
-
         LevelButton levelButton = new LevelButton();
         addObject(levelButton,236,236);
     }

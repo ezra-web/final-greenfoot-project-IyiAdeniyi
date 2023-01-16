@@ -62,7 +62,7 @@ public class IceFairy extends Actor
         
         if(Levels.levelTwo == true)
         {
-            speed = -7;
+            speed = -1;
         }
     }
     

@@ -12,17 +12,27 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    public int coins = 0;
+    static Label scoreLabel;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 450, 1);
         
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 750, 45);
+    
         prepare();
         setPaintOrder(FairyTree.class, IceFairy.class);
-
     }
     
-       /**
+    public void increaseCoin()
+    {
+        coins++;
+        scoreLabel.setValue(coins);
+    }
+    
+    /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
@@ -68,9 +78,18 @@ public class MyWorld extends World
         addObject(gameTile10,749,419);
 
         IceFairy icefairy = new IceFairy();
-        addObject(icefairy, 710 ,372);
+        addObject(icefairy, 710 ,370);
 
         LevelOneLabel levelOneLabel = new LevelOneLabel();
         addObject(levelOneLabel,400,25);
+        
+        Coin coin = new Coin();
+        addObject(coin,230,368);
+        
+        Coin coin2 = new Coin();
+        addObject(coin2,401,369);
+        
+        Coin coin3 = new Coin();
+        addObject(coin3,556,370);
     }
 }

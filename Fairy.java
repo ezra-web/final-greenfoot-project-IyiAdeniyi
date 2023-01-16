@@ -17,6 +17,8 @@ public class Fairy extends Actor
     
     GreenfootSound fairyTreeSound = new GreenfootSound("fairytree.mp3");
     
+    GreenfootSound coinSound = new GreenfootSound("coinSound.mp3");
+    
     String facing = "right";
     SimpleTimer animateTimer = new SimpleTimer();
     
@@ -70,7 +72,27 @@ public class Fairy extends Actor
     public void act()
     {
         // Add your action code here.
-         if(Greenfoot.isKeyDown("left"))
+        move();
+        
+        animateFairy();  
+        
+        nextLevel();
+        
+        jump(); 
+        
+        coin();
+        
+        if(isTouching(IceFairy.class))
+        {
+            GameOver gameOverWorld = new GameOver();
+            Greenfoot.setWorld(gameOverWorld);
+            return;
+        }
+    }
+    
+    public void move()
+    {
+        if(Greenfoot.isKeyDown("left"))
         {
             move(-4);
             facing = "left";
@@ -82,22 +104,9 @@ public class Fairy extends Actor
             move(4);
             facing = "right";
         }
-        
-        animateFairy();  
-        
-        nextLevel();
-        
-        Jump(); 
-        
-        if(isTouching(IceFairy.class))
-        {
-            GameOver gameOverWorld = new GameOver();
-            Greenfoot.setWorld(gameOverWorld);
-            return;
-        }
     }
     
-    public void Jump()
+    public void jump()
     {
         int ground = getWorld().getHeight() - getImage().getHeight()/2;
         boolean onGround = (getY() == ground);
@@ -155,6 +164,19 @@ public class Fairy extends Actor
                     Greenfoot.setWorld(levelTwoWorld);  
                 }
             }
+        }
+    }
+
+    public void coin()
+    {
+        if(isTouching(Coin.class))
+        {
+            
+            MyWorld world = new MyWorld();
+            world.increaseCoin();
+            removeTouching(Coin.class);
+            coinSound.play();
+            
         }
     }
 }
