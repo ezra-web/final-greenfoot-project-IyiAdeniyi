@@ -20,8 +20,6 @@ public class LevelTwo extends World
         Levels leveltwo = new Levels();
         leveltwo.setLevelTwo(true);        
         
-        addObject(MyWorld.scoreLabel, 750, 45);
-        
         prepare();
         setPaintOrder(FairyTree.class, IceFairy.class);
     }

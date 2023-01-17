@@ -86,7 +86,6 @@ public class Fairy extends Actor
         {
             GameOver gameOverWorld = new GameOver();
             Greenfoot.setWorld(gameOverWorld);
-            return;
         }
     }
     
@@ -171,12 +170,10 @@ public class Fairy extends Actor
     {
         if(isTouching(Coin.class))
         {
-            
-            MyWorld world = new MyWorld();
+            MyWorld world = (MyWorld) getWorld();
             world.increaseCoin();
             removeTouching(Coin.class);
             coinSound.play();
-            
         }
     }
 }
