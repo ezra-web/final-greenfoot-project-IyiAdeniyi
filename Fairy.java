@@ -48,6 +48,19 @@ public class Fairy extends Actor
         setImage(idleRight[0]);
     }
     
+    public void nextLevel()
+    {
+        if(isTouching(FairyTree.class))
+        {
+            fairyTreeSound.play();
+            MyWorld world = (MyWorld) getWorld();
+            world.setNextLevel();
+            world.setLabel();
+            world.setCoins();
+            setLocation(95,340);
+        }
+    }
+    
     int imageIndex = 0;
     public void animateFairy()
     {
@@ -134,38 +147,13 @@ public class Fairy extends Actor
             if("space".equals(Greenfoot.getKey()))
             {
                 speed = -20;
-                if(Levels.levelTwo == true)
-                {
-                    speed = -20;
-                }
                 setLocation(getX(), getY() + speed);
                 timer = 13;
             }
         }
     }
     
-    public void nextLevel()
-    {
-        if(isTouching(FairyTree.class))
-        {
-            fairyTreeSound.play();
-            treeTimer.mark();
-            if(treeTimer.millisElapsed() < 800)
-            {
-                if(Levels.levelTwo == true)
-                {
-                    TitleScreen home = new TitleScreen();
-                    Greenfoot.setWorld(home);
-                }
-                else
-                {
-                    LevelTwo levelTwoWorld = new LevelTwo();
-                    Greenfoot.setWorld(levelTwoWorld);  
-                }
-            }
-        }
-    }
-
+    
     public void coin()
     {
         if(isTouching(Coin.class))

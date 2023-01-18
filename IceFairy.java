@@ -60,9 +60,9 @@ public class IceFairy extends Actor
             setLocation(710 ,372);
         }
         
-        if(Levels.levelTwo == true)
+        if(MyWorld.level == 2)
         {
-            speed = -1;
+            speed --;
         }
     }
     

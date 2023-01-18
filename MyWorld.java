@@ -12,18 +12,77 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    public int coins = 0;
+    public static int coins = 0;
     Label scoreLabel;
+    static int level;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 450, 1);
         
-        scoreLabel = new Label(0, 80);
-        addObject(scoreLabel, 750, 45);
-    
+        setCoins();
+        
         prepare();
         setPaintOrder(FairyTree.class, IceFairy.class);
+    }
+    
+    public void setNextLevel()
+    {
+        IceFairy icefairy = new IceFairy();
+        level++;
+        icefairy.setSpeed(level);
+    }
+    
+    public void setLabel()
+    {
+        LevelOneLabel labelOne = new LevelOneLabel();
+        LevelTwoLabel labelTwo = new LevelTwoLabel();
+        LevelThreeLabel labelThree = new LevelThreeLabel();
+        LevelFourLabel labelFour = new LevelFourLabel();
+        LevelFiveLabel labelFive = new LevelFiveLabel();
+        LevelSixLabel labelSix = new LevelSixLabel();
+
+        if(level ==2)
+        {
+            removeObject(labelOne);
+            addObject(labelTwo,400,25);
+        }
+        
+        if(level ==3)
+        {
+            removeObject(labelTwo);
+            addObject(labelThree,400,25);
+        }
+        
+        if(level ==4)
+        {
+            removeObject(labelThree);
+            addObject(labelFour,400,25);
+        }
+        
+        if(level ==5)
+        {
+            removeObject(labelFour);
+            addObject(labelFive,400,25);
+        }
+        
+        if(level ==6)
+        {
+            removeObject(labelFive);
+            addObject(labelSix,400,25);
+        }
+    }
+    
+    public void setCoins()
+    {
+        Coin coin = new Coin();
+        addObject(coin,230,368);
+        
+        Coin coin2 = new Coin();
+        addObject(coin2,401,369);
+        
+        Coin coin3 = new Coin();
+        addObject(coin3,556,370);
     }
     
     public void increaseCoin()
@@ -38,6 +97,12 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        LevelOneLabel levelOneLabel = new LevelOneLabel();
+        addObject(levelOneLabel,400,25);
+        
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 750, 45);
+        
         Fairy fairy = new Fairy();
         addObject(fairy,95,340);
 
@@ -79,17 +144,5 @@ public class MyWorld extends World
 
         IceFairy icefairy = new IceFairy();
         addObject(icefairy, 710 ,370);
-
-        LevelOneLabel levelOneLabel = new LevelOneLabel();
-        addObject(levelOneLabel,400,25);
-        
-        Coin coin = new Coin();
-        addObject(coin,230,368);
-        
-        Coin coin2 = new Coin();
-        addObject(coin2,401,369);
-        
-        Coin coin3 = new Coin();
-        addObject(coin3,556,370);
     }
 }

@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Levels extends World
 {
-    public static boolean levelTwo = false;
     /**
      * Constructor for objects of class Levels.
     */
@@ -21,10 +20,34 @@ public class Levels extends World
     
     public void act()
     {        
-        if(levelTwo == true)
+        if(MyWorld.level == 2)
         {
-            LevelTwoButton levelTwoButton = new LevelTwoButton();
-            addObject(levelTwoButton,567,238);
+            LvlTwoBtn levelTwoButton = new LvlTwoBtn();
+            addObject(levelTwoButton,391,171);
+        }
+        
+        if(MyWorld.level == 3)
+        {
+            LvlThreeBtn levelThreeButton = new LvlThreeBtn();
+            addObject(levelThreeButton,567,171);
+        }
+        
+        if(MyWorld.level == 4)
+        {
+            LvlFourBtn levelFourButton = new LvlFourBtn();
+            addObject(levelFourButton,147,329);
+        }
+        
+        if(MyWorld.level == 5)
+        {
+            LvlFiveBtn levelFiveButton = new LvlFiveBtn();
+            addObject(levelFiveButton,391,329);
+        }
+        
+        if(MyWorld.level == 6)
+        {
+            LvlSixBtn levelSixButton = new LvlSixBtn();
+            addObject(levelSixButton,391,329);
         }
     }
     
@@ -34,12 +57,7 @@ public class Levels extends World
      */
     private void prepare()
     {
-        LevelButton levelButton = new LevelButton();
-        addObject(levelButton,236,236);
-    }
-    
-    public static void setLevelTwo(boolean leveltwo)
-    {
-        levelTwo = leveltwo;
+        LvlOneBtn levelOneButton = new LvlOneBtn();
+        addObject(levelOneButton,146,171);
     }
 }

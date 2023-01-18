@@ -17,16 +17,8 @@ public class PlayAgainButton extends Actor
         // Add your action code here.
         if(Greenfoot.mousePressed(PlayAgainButton.this))
         {
-            if(Levels.levelTwo == true)
-            {
-                LevelTwo levelTwoWorld = new LevelTwo();
-                Greenfoot.setWorld(levelTwoWorld);
-            }
-            else
-            {
-                MyWorld gameWorld = new MyWorld();
-                Greenfoot.setWorld(gameWorld);
-            }
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
         }
     }
 }
