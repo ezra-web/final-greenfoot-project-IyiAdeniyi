@@ -1,21 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * beginning screen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi 
+ * @version 2023-01-18
  */
 public class TitleScreen extends World
 {
-
     /**
      * Constructor for objects of class TitleScreen.
-     * 
      */
     public TitleScreen()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 800x450 cells with a cell size of 1x1 pixels.
         super(800, 450, 1); 
         prepare();
     }

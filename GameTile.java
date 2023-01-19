@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameTile here.
+ * Ground of the world.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi 
+ * @version 2023-01-18
  */
 public class GameTile extends Actor
 {

@@ -1,17 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Fairy here.
+ * Main player of the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi 
+ * @version 2023-01-18
  */
 public class Fairy extends Actor
 {
-    /**
-     * Act - do whatever the Fairy wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     GreenfootImage idleRight[] = new GreenfootImage[5];
     GreenfootImage idleLeft[] = new GreenfootImage[5];
     
@@ -22,12 +19,12 @@ public class Fairy extends Actor
     String facing = "right";
     SimpleTimer animateTimer = new SimpleTimer();
     
-    SimpleTimer treeTimer = new SimpleTimer();
-    
     public int timer;
     
     public int speed;
-
+    /**
+     *Constructor = The code that gets run one time when object is created
+     */
     public Fairy()
     {
         for(int i = 0; i < idleRight.length; i++)
@@ -48,16 +45,42 @@ public class Fairy extends Actor
         setImage(idleRight[0]);
     }
     
+    /**
+     * Act - do whatever the Fairy wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */     
+    public void act()
+    {
+        move();
+        
+        animateFairy();  
+        
+        nextLevel();
+        
+        jump(); 
+        
+        coin();
+    }
+
+    /**
+     * Checks for when the fairy is touching the fairy tree to proceed to hte next level.
+     */
     public void nextLevel()
     {
         if(isTouching(FairyTree.class))
         {
-            fairyTreeSound.play();
             MyWorld world = (MyWorld) getWorld();
-            world.setNextLevel();
-            world.setLabel();
-            world.setCoins();
-            setLocation(95,340);
+            if(world.coins % 3 == 0)
+            {
+                fairyTreeSound.play();
+                
+                world.setNextLevel();
+                world.setLabel();
+                world.setCoins();
+                world.spawnIceFairy();
+                      
+                setLocation(95,340);
+            }   
         }
     }
     
@@ -81,29 +104,10 @@ public class Fairy extends Actor
         imageIndex = (imageIndex + 1) % idleLeft.length;
         }
     }
-
-    public void act()
-    {
-        // Add your action code here.
-        move();
-        
-        animateFairy();  
-        
-        nextLevel();
-        
-        jump(); 
-        
-        coin();
-        
-        if(isTouching(IceFairy.class))
-        {
-            GameOver gameOverWorld = new GameOver();
-            Greenfoot.setWorld(gameOverWorld);
-        }
-    }
     
     public void move()
     {
+        //when left key is pressed moves the fairy right
         if(Greenfoot.isKeyDown("left"))
         {
             move(-4);
@@ -118,11 +122,15 @@ public class Fairy extends Actor
         }
     }
     
+    /**
+     * when space bar pressed fairy jumps
+     */
     public void jump()
     {
         int ground = getWorld().getHeight() - getImage().getHeight()/2;
         boolean onGround = (getY() == ground);
         
+        //Checks for if the fairy is not on the ground.
         if(getY() != 340 )
         {
             if(speed == 0 && timer > 0)
@@ -135,7 +143,7 @@ public class Fairy extends Actor
             }
             speed++;
             setLocation(getX(), getY() + speed);
-            
+            //checks if the fairy is in the air, if so code to fall back to ground
             if(getY() >=ground )
             {
                 setLocation(getX(), ground);
@@ -144,6 +152,7 @@ public class Fairy extends Actor
         }
         else
         {
+            //checks if space bar is pressed to jump
             if("space".equals(Greenfoot.getKey()))
             {
                 speed = -20;
@@ -153,7 +162,9 @@ public class Fairy extends Actor
         }
     }
     
-    
+    /**
+     * removes coin and plays sound when collected by the fairy
+     */
     public void coin()
     {
         if(isTouching(Coin.class))

@@ -1,24 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class IceFairy here.
+ * IceFairy actor. If fairy actor touches the icefairy then gameover.
  * 
  * @author Iyi Adeniyi 
  * @version 2023-01-10
  */
 public class IceFairy extends Actor
 {
-    /**
-     * Act - do whatever the IceFairy wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
+    //Images to animate IceFairy
     GreenfootImage idle[] = new GreenfootImage[6];
 
     SimpleTimer animationTimer = new SimpleTimer();
     
-    int speed = -5;
+    int speed = -1;
     
+    /**
+     * constructor for IceFairy
+     */
     public IceFairy()
     {
         for(int i = 0; i < idle.length; i++)
@@ -40,14 +39,19 @@ public class IceFairy extends Actor
             return;
         }
         animationTimer.mark();
-        
+        //animates fairy
         setImage(idle[imageIndex]);
         imageIndex = (imageIndex + 1) % idle.length;
         
     }
 
+    /**
+     * Act - do whatever the IceFairy wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
+        MyWorld gameWorld = new MyWorld();
         // Add your action code here.
         animation();
         
@@ -60,10 +64,17 @@ public class IceFairy extends Actor
             setLocation(710 ,372);
         }
         
-        if(MyWorld.level == 2)
+        if(isTouching(Fairy.class))
         {
-            speed --;
+            GameOver gameOverWorld = new GameOver();
+            Greenfoot.setWorld(gameOverWorld);
         }
+    }
+    
+    public void setPosition()
+    {
+        setLocation(710 ,370);
+        
     }
     
     public void setSpeed(int spd)

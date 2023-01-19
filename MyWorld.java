@@ -1,10 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Main game screen, fairy attempts to get to world tree, while 
+ * collecting coins along the way and attempting to avoid the 
+ * ice fairies.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi 
+ * @version 2023-01-18
  */
 public class MyWorld extends World
 {
@@ -12,27 +14,39 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    public static int coins = 0;
+    public int coins = 0;
     Label scoreLabel;
-    static int level;
+    public int level = 1;
+    public static int levels = 1;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 450, 1);
         
         setCoins();
+        setLabel();
+        
+        spawnIceFairy();
+        
+        LevelOneLabel labelOne = new LevelOneLabel();
+        addObject(labelOne,400,25);
         
         prepare();
         setPaintOrder(FairyTree.class, IceFairy.class);
     }
     
+    /**
+     * Increases level when is called
+     */
     public void setNextLevel()
     {
-        IceFairy icefairy = new IceFairy();
-        level++;
-        icefairy.setSpeed(level);
+        level+=1;
+        levels+=1;
     }
     
+    /**
+     * Sets the label to it's proper level.
+     */
     public void setLabel()
     {
         LevelOneLabel labelOne = new LevelOneLabel();
@@ -42,6 +56,7 @@ public class MyWorld extends World
         LevelFiveLabel labelFive = new LevelFiveLabel();
         LevelSixLabel labelSix = new LevelSixLabel();
 
+        
         if(level ==2)
         {
             removeObject(labelOne);
@@ -73,6 +88,9 @@ public class MyWorld extends World
         }
     }
     
+    /**
+     * Adds coins to world after each level.
+     */
     public void setCoins()
     {
         Coin coin = new Coin();
@@ -85,6 +103,19 @@ public class MyWorld extends World
         addObject(coin3,556,370);
     }
     
+    /**
+     * Create new icefairy once level increases
+     */
+    public void spawnIceFairy()
+    {
+        IceFairy icefairy = new IceFairy();
+        icefairy.setSpeed(-level);
+        addObject(icefairy, 710,372);
+    }
+    
+    /**
+     * Once called, increases coins once collected
+     */
     public void increaseCoin()
     {
         coins++;
@@ -97,15 +128,13 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        LevelOneLabel levelOneLabel = new LevelOneLabel();
-        addObject(levelOneLabel,400,25);
         
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 750, 45);
         
         Fairy fairy = new Fairy();
         addObject(fairy,95,340);
-
+        
         FairyTree fairyTree = new FairyTree();
         addObject(fairyTree,710,307);
 
@@ -141,8 +170,5 @@ public class MyWorld extends World
 
         GameTile gameTile10 = new GameTile();
         addObject(gameTile10,749,419);
-
-        IceFairy icefairy = new IceFairy();
-        addObject(icefairy, 710 ,370);
     }
 }

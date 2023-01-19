@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class LvlTwoBtn here.
+ * Button to access level two.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi 
+ * @version 2023-01-17
  */
 public class LvlTwoBtn extends Actor
 {
@@ -15,5 +15,12 @@ public class LvlTwoBtn extends Actor
     public void act()
     {
         // Add your action code here.
+        if(Greenfoot.mousePressed(LvlTwoBtn.this))
+        {
+            MyWorld gameWorld = new MyWorld();
+            gameWorld.level = 2;
+            Greenfoot.setWorld(gameWorld);
+            gameWorld.setLabel();
+        }
     }
 }

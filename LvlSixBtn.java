@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class LvlSixBtn here.
+ * Button to acces level six.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi 
+ * @version 2023-01-17
  */
 public class LvlSixBtn extends Actor
 {
@@ -15,5 +15,12 @@ public class LvlSixBtn extends Actor
     public void act()
     {
         // Add your action code here.
+        if(Greenfoot.mousePressed(LvlSixBtn.this))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+            gameWorld.level = 6;
+            gameWorld.setLabel();
+        }
     }
 }

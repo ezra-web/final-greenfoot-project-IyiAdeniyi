@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TutorialButton here.
+ * Button to acces tutorial.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi
+ * @version 2023-01-18
  */
 public class TutorialButton extends Actor
 {
@@ -15,12 +15,10 @@ public class TutorialButton extends Actor
     public void act()
     {
         // Add your action code here.
-
         if(Greenfoot.mousePressed(TutorialButton.this))
         {
             Tutorial tutorialWorld = new Tutorial();
             Greenfoot.setWorld(tutorialWorld);
         }
-        
     }
 }

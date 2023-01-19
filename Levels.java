@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Levels here.
+ * World that displays and provides acces to cleared levels.
  * 
  * @author Iyi Adeniyi
  * @version 2023-01-15
@@ -13,47 +13,50 @@ public class Levels extends World
     */
     public Levels()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new MyWorld.levels with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 450, 1); 
         prepare();
     }
     
+    /**
+     * Checks if level has been cleared, then add the button to acces said levels
+     */
     public void act()
     {        
-        if(MyWorld.level == 2)
+        if(MyWorld.levels >= 2)
         {
             LvlTwoBtn levelTwoButton = new LvlTwoBtn();
             addObject(levelTwoButton,391,171);
         }
         
-        if(MyWorld.level == 3)
+        if(MyWorld.levels >= 3)
         {
             LvlThreeBtn levelThreeButton = new LvlThreeBtn();
-            addObject(levelThreeButton,567,171);
+            addObject(levelThreeButton,652,171);
         }
         
-        if(MyWorld.level == 4)
+        if(MyWorld.levels >= 4)
         {
             LvlFourBtn levelFourButton = new LvlFourBtn();
             addObject(levelFourButton,147,329);
         }
         
-        if(MyWorld.level == 5)
+        if(MyWorld.levels >= 5)
         {
             LvlFiveBtn levelFiveButton = new LvlFiveBtn();
             addObject(levelFiveButton,391,329);
         }
         
-        if(MyWorld.level == 6)
+        if(MyWorld.levels >= 6)
         {
             LvlSixBtn levelSixButton = new LvlSixBtn();
-            addObject(levelSixButton,391,329);
+            addObject(levelSixButton,652,329);
         }
     }
     
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Prepare the MyWorld.levels for the start of the program.
+     * That is: create the initial objects and add them to the MyWorld.levels.
      */
     private void prepare()
     {
